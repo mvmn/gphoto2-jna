@@ -18,6 +18,7 @@ import com.sun.jna.ptr.LongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
 import x.mvmn.gphoto2.jna.Camera;
+import x.mvmn.gphoto2.jna.Camera.ByReference;
 import x.mvmn.gphoto2.jna.Gphoto2Library;
 
 /**
@@ -27,14 +28,10 @@ import x.mvmn.gphoto2.jna.Gphoto2Library;
 public class TestSwingLiveView {
 
 	public static void main(String[] args) throws Exception {
-		final Camera camera;
-		{
-			Camera.ByReference[] p2CamByRef = new Camera.ByReference[] { new Camera.ByReference() };
-			check(Gphoto2Library.INSTANCE.gp_camera_new(p2CamByRef));
-			camera = p2CamByRef[0];
-		}
-		final PointerByReference context = Gphoto2Library.INSTANCE.gp_context_new();
-		check(Gphoto2Library.INSTANCE.gp_camera_init(camera, context));
+		final Camera camera = newCamera();
+
+		final PointerByReference context = newContext();
+		initCamera(camera, context);
 		// check(Gphoto2Library.INSTANCE.gp_camera_trigger_capture(camera, context));
 
 		final JFrame frame = new JFrame();
@@ -64,11 +61,11 @@ public class TestSwingLiveView {
 					} catch (Exception e) {
 						e.printStackTrace();
 					} finally {
-						Gphoto2Library.INSTANCE.gp_file_free(pbrFile);
+						freeCameraFile(pbrFile);
 					}
 				}
 
-				Gphoto2Library.INSTANCE.gp_camera_exit(camera, context);
+				exitCam(camera, context);
 			}
 		};
 		frame.addWindowListener(new WindowListener() {
@@ -107,6 +104,28 @@ public class TestSwingLiveView {
 		return retVal;
 	}
 
+	public static int exitCam(Camera camera, PointerByReference context) {
+		return check(Gphoto2Library.INSTANCE.gp_camera_exit(camera, context));
+	}
+
+	public static int freeCameraFile(PointerByReference pbrFile) {
+		return check(Gphoto2Library.INSTANCE.gp_file_unref(pbrFile));
+	}
+
+	public static int initCamera(Camera camera, PointerByReference context) {
+		return check(Gphoto2Library.INSTANCE.gp_camera_init(camera, context));
+	}
+
+	public static PointerByReference newContext() {
+		return Gphoto2Library.INSTANCE.gp_context_new();
+	}
+
+	public static ByReference newCamera() {
+		Camera.ByReference[] p2CamByRef = new Camera.ByReference[] { new Camera.ByReference() };
+		check(Gphoto2Library.INSTANCE.gp_camera_new(p2CamByRef));
+		return p2CamByRef[0];
+	}
+
 	public static PointerByReference capturePreview(Camera camera, PointerByReference context) {
 		PointerByReference pbrFile = new PointerByReference();
 		{
@@ -120,10 +139,9 @@ public class TestSwingLiveView {
 	}
 
 	public static byte[] getCameraFileData(PointerByReference cameraFile, Camera camera, PointerByReference context) {
-		PointerByReference pbrFile = capturePreview(camera, context);
 		PointerByReference pref = new PointerByReference();
 		LongByReference longByRef = new LongByReference();
-		int captureRes = check(Gphoto2Library.INSTANCE.gp_file_get_data_and_size(pbrFile, pref, longByRef));
+		int captureRes = check(Gphoto2Library.INSTANCE.gp_file_get_data_and_size(cameraFile, pref, longByRef));
 		if (captureRes >= 0) {
 			return pref.getValue().getByteArray(0, (int) longByRef.getValue());
 		} else {
