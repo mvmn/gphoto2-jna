@@ -10,6 +10,7 @@ import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
+import com.sun.jna.ptr.ByReference;
 import com.sun.jna.ptr.FloatByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.LongByReference;
@@ -2703,6 +2704,8 @@ public interface Gphoto2Library extends Library {
 	 * <i>native declaration : /usr/local/include/gphoto2/gphoto2/gphoto2-widget.h:59</i>
 	 */
 	int gp_widget_get_value(PointerByReference widget, Pointer value);
+	
+	int gp_widget_get_value(PointerByReference widget, ByReference value);
 	/**
 	 * Original signature : <code>int gp_widget_set_name(CameraWidget*, const char*)</code><br>
 	 * <i>native declaration : /usr/local/include/gphoto2/gphoto2/gphoto2-widget.h:61</i><br>
