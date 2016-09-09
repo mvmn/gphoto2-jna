@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>x.mvmn.gphoto2</groupId>
 	<artifactId>gphoto2-jna</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 
 	<dependencies>
 		<dependency>
