@@ -9,7 +9,7 @@ import java.util.List;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> , <a href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
-public abstract class CameraFileInfoFile extends Structure {
+public class CameraFileInfoFile extends Structure {
 	/**
 	 * @see CameraFileInfoFields<br>
 	 * < \brief Bitmask containing the set members.<br>
@@ -77,10 +77,10 @@ public abstract class CameraFileInfoFile extends Structure {
 	public CameraFileInfoFile(Pointer peer) {
 		super(peer);
 	}
-	public static abstract class ByReference extends CameraFileInfoFile implements Structure.ByReference {
+	public static class ByReference extends CameraFileInfoFile implements Structure.ByReference {
 		
 	};
-	public static abstract class ByValue extends CameraFileInfoFile implements Structure.ByValue {
+	public static class ByValue extends CameraFileInfoFile implements Structure.ByValue {
 		
 	};
 }
