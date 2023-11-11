@@ -24,7 +24,7 @@ import java.nio.LongBuffer;
 public interface Gphoto2Library extends Library {
 	public static final String JNA_LIBRARY_NAME = "gphoto2";
 	public static final NativeLibrary JNA_NATIVE_LIB = NativeLibrary.getInstance(Gphoto2Library.JNA_LIBRARY_NAME);
-	public static final Gphoto2Library INSTANCE = (Gphoto2Library)Native.loadLibrary(Gphoto2Library.JNA_LIBRARY_NAME, Gphoto2Library.class);
+	public static final Gphoto2Library INSTANCE = (Gphoto2Library)Native.load(Gphoto2Library.JNA_LIBRARY_NAME, Gphoto2Library.class);
 	/**
 	 * <i>native declaration : gphoto2/gphoto2-port-info-list.h</i><br>
 	 * enum values

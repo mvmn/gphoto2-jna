@@ -36,7 +36,7 @@ public class CameraFileHandler extends Structure {
 	public CameraFileHandler() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("size", "read", "write");
 	}
 	/**

@@ -2,13 +2,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>x.mvmn.gphoto2</groupId>
 	<artifactId>gphoto2-jna</artifactId>
-	<version>1.2</version>
+	<version>1.2.1</version>
 
 	<dependencies>
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
 			<artifactId>jna</artifactId>
-			<version>4.1.0</version>
+			<version>5.13.0</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.lept4j</groupId>

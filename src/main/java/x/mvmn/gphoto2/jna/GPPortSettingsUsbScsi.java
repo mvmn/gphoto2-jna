@@ -18,7 +18,7 @@ public class GPPortSettingsUsbScsi extends Structure {
 	public GPPortSettingsUsbScsi() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("path");
 	}
 	/**

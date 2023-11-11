@@ -58,7 +58,7 @@ public class CameraStorageInformation extends Structure {
 	public CameraStorageInformation() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("fields", "basedir", "label", "description", "type", "fstype", "access", "capacitykbytes", "freekbytes", "freeimages");
 	}
 	public CameraStorageInformation(Pointer peer) {

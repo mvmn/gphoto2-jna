@@ -18,7 +18,7 @@ public class CameraText extends Structure {
 	public CameraText() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("text");
 	}
 	/**

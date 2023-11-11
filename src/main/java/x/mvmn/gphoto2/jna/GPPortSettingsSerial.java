@@ -31,7 +31,7 @@ public class GPPortSettingsSerial extends Structure {
 	public GPPortSettingsSerial() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("port", "speed", "bits", "parity", "stopbits");
 	}
 	/**

@@ -43,7 +43,7 @@ public abstract class CameraFileInfoFile extends Structure {
 	public CameraFileInfoFile() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("fields", "status", "size", "type", "width", "height", "permissions");
 	}
 	/**

@@ -23,7 +23,7 @@ public class CameraFilePath extends Structure {
 	public CameraFilePath() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("name", "folder");
 	}
 	/**

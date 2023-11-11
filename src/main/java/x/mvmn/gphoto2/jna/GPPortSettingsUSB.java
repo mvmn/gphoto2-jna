@@ -32,7 +32,7 @@ public class GPPortSettingsUSB extends Structure {
 	public GPPortSettingsUSB() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("inep", "outep", "intep", "config", "interface$", "altsetting", "maxpacketsize", "port");
 	}
 	/**

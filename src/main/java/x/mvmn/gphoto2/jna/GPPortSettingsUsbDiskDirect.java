@@ -18,7 +18,7 @@ public class GPPortSettingsUsbDiskDirect extends Structure {
 	public GPPortSettingsUsbDiskDirect() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("path");
 	}
 	/**

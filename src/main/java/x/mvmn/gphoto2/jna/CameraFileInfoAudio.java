@@ -32,7 +32,7 @@ public class CameraFileInfoAudio extends Structure {
 	public CameraFileInfoAudio() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("fields", "status", "size", "type");
 	}
 	/**

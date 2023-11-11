@@ -42,7 +42,7 @@ public class GPPort extends Structure {
 	public GPPort() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("type", "settings", "settings_pending", "timeout", "pl", "pc");
 	}
 	/**

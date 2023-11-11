@@ -49,7 +49,7 @@ public class CameraFilesystemFuncs extends Structure {
 	public CameraFilesystemFuncs() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("file_list_func", "folder_list_func", "put_file_func", "delete_all_func", "get_info_func", "set_info_func", "make_dir_func", "remove_dir_func", "get_file_func", "read_file_func", "del_file_func", "storage_info_func", "unused");
 	}
 	public CameraFilesystemFuncs(Pointer peer) {

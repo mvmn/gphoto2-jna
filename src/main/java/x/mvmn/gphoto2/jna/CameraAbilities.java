@@ -89,7 +89,7 @@ public class CameraAbilities extends Structure {
 	public CameraAbilities() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("model", "status", "port", "speed", "operations", "file_operations", "folder_operations", "usb_vendor", "usb_product", "usb_class", "usb_subclass", "usb_protocol", "library", "id", "device_type", "reserved2", "reserved3", "reserved4", "reserved5", "reserved6", "reserved7", "reserved8");
 	}
 	public CameraAbilities(Pointer peer) {

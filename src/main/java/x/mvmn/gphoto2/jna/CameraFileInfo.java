@@ -19,7 +19,7 @@ public class CameraFileInfo extends Structure {
 	public CameraFileInfo() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("preview", "file", "audio");
 	}
 	/**

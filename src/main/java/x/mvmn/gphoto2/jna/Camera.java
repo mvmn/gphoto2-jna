@@ -30,7 +30,7 @@ public class Camera extends Structure {
 	public Camera() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("port", "fs", "functions", "pl", "pc");
 	}
 	/**

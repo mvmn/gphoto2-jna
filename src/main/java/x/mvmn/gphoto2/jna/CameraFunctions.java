@@ -142,7 +142,7 @@ public class CameraFunctions extends Structure {
 	public CameraFunctions() {
 		super();
 	}
-	protected List<? > getFieldOrder() {
+	protected List<String> getFieldOrder() {
 		return Arrays.asList("pre_func", "post_func", "exit", "get_config", "set_config", "list_config", "get_single_config", "set_single_config", "capture", "trigger_capture", "capture_preview", "summary", "manual", "about", "wait_for_event", "reserved1", "reserved2", "reserved3", "reserved4", "reserved5", "reserved6", "reserved7", "reserved8");
 	}
 	public CameraFunctions(Pointer peer) {
